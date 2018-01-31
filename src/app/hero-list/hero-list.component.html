@@ -1,26 +1,11 @@
 <h3>My Heroes</h3>
 
-<!-- <div>
-    <h1>{{ selectedHero.name }}</h1>
-    <h3>{{ selectedHero.id }}</h3>
-
-    <div>
-      <label for="name">Hero Name</label>
-      <input type="text" name="name" [(ngModel)]="selectedHero.name">
-    </div>
-
-    <div>
-      <label for="power">Power</label>
-      <input type="text" name="power" [(ngModel)]="selectedHero.power">
-    </div>
-
-    <button (click)="go()">GO</button>
-
-    <ul>
-      <li *ngFor='let color of colors'>{{ color }}</li>
-    </ul>
-</div> -->
-
 <ul>
-  <li *ngFor='let hero of heroes'>{{ hero.name }}: {{ hero.power }}</li>
+  <li *ngFor='let hero of heroes' (click)="selectHero(hero)">{{ hero.name }}: {{ hero.power }}</li>
 </ul>
+
+<h1>Selected Hero:</h1>
+<div>
+  <h1>{{ selectedHero.name }}</h1>
+  <h3>{{ selectedHero.power }}</h3>
+</div>

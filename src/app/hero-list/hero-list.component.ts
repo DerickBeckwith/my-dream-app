@@ -7,17 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroListComponent implements OnInit {
 
-  selectedHero = { id: 1, name: 'Ms Tafling', power: 'speed' };
-  colors = [ 'red', 'yellow', 'green' ];
-
   heroes = [
-    { id: 1, name: 'Ms Tafling', power: 'speed' },
-    { id: 2, name: 'Thor', power: 'hammer' },
-    { id: 3, name: 'Spiderman', power: 'webslinging' },
-    { id: 4, name: 'Batman', power: 'fashion' }
+    new Hero(1, 'Ms Tafling', 'speed'),
+    new Hero(2, 'Thor', 'hammer'),
+    new Hero(3, 'Spiderman', 'webslinging'),
+    new Hero(4, 'Batman', 'fashion')
   ];
 
-  constructor() { }
+  selectedHero: Hero;
+
+  colors = [ 'red', 'yellow', 'green' ];
+
+  constructor() {
+    this.selectedHero = this.heroes[0];
+  }
 
   ngOnInit() {
   }
@@ -26,4 +29,12 @@ export class HeroListComponent implements OnInit {
     alert('Hero Name: ' + this.selectedHero.name);
   }
 
+  selectHero(hero: Hero) {
+    this.selectedHero = hero;
+  }
+
+}
+
+export class Hero {
+  constructor(public id: number, public name: string, public power: string) {}
 }
