@@ -10,6 +10,13 @@ export class HeroListComponent implements OnInit {
   selectedHero = { id: 1, name: 'Ms Tafling', power: 'speed' };
   colors = [ 'red', 'yellow', 'green' ];
 
+  heroes = [
+    { id: 1, name: 'Ms Tafling', power: 'speed' },
+    { id: 2, name: 'Thor', power: 'hammer' },
+    { id: 3, name: 'Spiderman', power: 'webslinging' },
+    { id: 4, name: 'Batman', power: 'fashion' }
+  ];
+
   constructor() { }
 
   ngOnInit() {
