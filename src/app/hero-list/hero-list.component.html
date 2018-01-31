@@ -1,3 +1,16 @@
-<h3>
-  My Heroes
-</h3>
+<h3>My Heroes</h3>
+
+<h1>{{ selectedHero.name }}</h1>
+<h3>{{ selectedHero.id }}</h3>
+
+<div>
+  <label for="name">Hero Name</label>
+  <input type="text" name="name" [(ngModel)]="selectedHero.name">
+</div>
+
+<div>
+  <label for="power">Power</label>
+  <input type="text" name="power" [(ngModel)]="selectedHero.power">
+</div>
+
+<button (click)="go()">GO</button>
