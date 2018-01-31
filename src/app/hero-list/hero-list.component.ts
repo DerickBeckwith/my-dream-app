@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeroListComponent implements OnInit {
 
   selectedHero = { id: 1, name: 'Ms Tafling', power: 'speed' };
+  colors = [ 'red', 'yellow', 'green' ];
+
   constructor() { }
 
   ngOnInit() {
